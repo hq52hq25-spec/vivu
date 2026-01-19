@@ -77,9 +77,9 @@
                     shapePresets.planet.push(new THREE.Vector3(Math.cos(a)*r, (Math.random()-0.5)*0.5, Math.sin(a)*r));
                 }
 
-                // 3. I LOVE YOU (Đã thu nhỏ 1/2)
+                // 3. I LOVE YOU 
                 let lx = 0, ly = 0;
-                const ls = 0.1; // Scale nhỏ (Gốc là 0.2)
+                const ls = 0.1;
                 // Logic vẽ chữ I LOVE YOU
                 if (p < 0.05) { lx = -40; ly = (Math.random()-0.5)*14; } 
                 else if (p < 0.15) { if (Math.random()>0.3) { lx = -22; ly = (Math.random()-0.5)*14; } else { lx = -22 + Math.random()*8; ly = -7; } }
@@ -89,12 +89,12 @@
                 else if (p < 0.70) { const tY = (Math.random()-0.5)*2; if (tY < 0) { lx = 45 + tY*4; ly = -tY*7; } else { lx = 45 + tY*4; ly = tY*7; } if (Math.random()>0.6) { lx = 45; ly = -Math.random()*7; } }
                 else if (p < 0.85) { const ang = Math.random()*Math.PI*2; lx = 58 + Math.cos(ang)*5; ly = Math.sin(ang)*7; }
                 else { const tU = Math.random()*Math.PI; lx = 71 + Math.cos(tU+Math.PI)*5; ly = (Math.sin(tU+Math.PI)*8) + 2; if (Math.random()>0.4) { lx = (Math.random()>0.5?66:76); ly = 2+Math.random()*5; } }
-                // Đẩy vào mảng
+                
                 shapePresets.iloveyou.push(new THREE.Vector3((lx - 15)*ls, ly*ls, z));
 
-                // 4. UYEN XINH (Cân đối & Đều hạt)
+                // 4. UYEN XINH 
                 let ux = 0, uy = 0;
-                const us = 0.20; // Giữ nguyên kích thước chữ tên để nổi bật
+                const us = 0.20; 
 
                 if (p < 0.125) { // U
                     const tU = Math.random() * Math.PI; ux = -35 + Math.cos(tU + Math.PI) * 5; uy = Math.sin(tU + Math.PI) * 7 + 2;
@@ -122,7 +122,7 @@
                 // Căn giữa (-5 offset)
                 shapePresets.uynnxinh.push(new THREE.Vector3((ux - 5) * us + b, uy * us + b, z));
 
-                // [QUAN TRỌNG] Khởi tạo mảng chuyển động để tránh lỗi "undefined"
+                // Khởi tạo mảng chuyển động để tránh lỗi "undefined"
                 transitionParticles.push(shapePresets.heart[i].clone());
             }
             // Thiết lập hình ban đầu
@@ -222,3 +222,4 @@
     </script>
 </body>
 </html>
+
